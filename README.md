@@ -18,13 +18,22 @@ scripts/package.sh      builds dist/<name>-<version>.tgz
 dist/                   build output (git-ignored)
 ```
 
-## Build and install
+## Install
+
+1. Download `git-history-viewer-<version>.tgz` from the [latest release](https://github.com/dmaislin-cribl/git-history-viewer/releases/latest).
+2. In Cribl, go to **App Platform → Add App → Upload** and select the `.tgz`.
+
+## Build and release
 
 ```bash
-npm run package        # or: bash scripts/package.sh
+npm run package        # or: bash scripts/package.sh → dist/git-history-viewer-<version>.tgz
 ```
 
-Upload `dist/git-history-viewer-<version>.tgz` in Cribl under **App Platform → Add App → Upload**.
+To publish, bump `version` in `package.json`, commit, then:
+
+```bash
+gh release create v<version> dist/git-history-viewer-<version>.tgz --title "v<version>" --notes "..."
+```
 
 ## Configure
 
