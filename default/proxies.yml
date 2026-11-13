@@ -1,0 +1,14 @@
+# External domains this app may reach. Top-level keys are domains; the app calls
+# ${CRIBL_API_URL}/proxy/api.github.com/<path> and the platform forwards it here.
+# The token is written to the app's KV store (encrypted) from the Settings dialog
+# and injected server-side, so the browser never holds it after saving.
+api.github.com:
+  timeout: 60000
+  paths:
+    allowlist:
+      - /repos/
+  headers:
+    inject:
+      Authorization: "'Bearer ' + kv.githubToken"
+      Accept: "'application/vnd.github+json'"
+      X-GitHub-Api-Version: "'2022-11-28'"

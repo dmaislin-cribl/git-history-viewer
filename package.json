@@ -1,0 +1,11 @@
+{
+  "name": "git-history-viewer",
+  "version": "0.8.1",
+  "private": true,
+  "displayName": "Git History Viewer",
+  "description": "View, filter, and export Stream/Edge config commit history and GitHub repository history inside Cribl",
+  "author": "Cribl SE",
+  "scripts": {
+    "package": "bash scripts/package.sh"
+  }
+}

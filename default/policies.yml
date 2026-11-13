@@ -1,0 +1,12 @@
+# Cribl product API paths this app reads (all GET). Admins see these at install time.
+policies:
+  # Worker groups, used to list Stream and Edge groups and their deployed config version
+  - object: '/master/groups'
+    actions: ['GET']
+  - object: '/products/edge/groups'
+    actions: ['GET']
+  # Per-group config commit history and single-commit diffs
+  - object: '/m/:gid/version'
+    actions: ['GET']
+  - object: '/m/:gid/version/*'
+    actions: ['GET']
